@@ -1,0 +1,20 @@
+<a routerLink="/admin/products/new" class="btn btn-primary">New Product</a>
+<hr>
+<table datatable [dtOptions]="dtOptions" class="table table-striped">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ p.title }}</td>
+      <td>{{ p.price }}</td>
+      <td><a [routerLink]="['/admin/products/', p.key]" >Edit</a></td>
+    </tr>
+  </tbody>
+</table>
